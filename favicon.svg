@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Arka Plan Gradyanı -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%" fx="35%" fy="35%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="65%" stop-color="#0b101b"/>
+      <stop offset="100%" stop-color="#04060a"/>
+    </radialGradient>
+
+    <!-- Dış Halka Metalik Altın-Mavi Gradyanı -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="45%" stop-color="#d97706"/>
+      <stop offset="75%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <!-- Altın Pervane Kanadı Gradyanı -->
+    <linearGradient id="bladeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="35%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <!-- Mavi Hava Akımı Kanat Gradyanı -->
+    <linearGradient id="bladeBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="35%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- Merkez Göbek Gradyanı -->
+    <radialGradient id="hubGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#fbbf24"/>
+      <stop offset="70%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </radialGradient>
+
+    <!-- Gölge Efekti -->
+    <filter id="fanShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Dış Çember / Rozet Gövdesi -->
+  <circle cx="256" cy="256" r="242" fill="url(#bgGrad)" stroke="url(#ringGrad)" stroke-width="18"/>
+
+  <!-- İç İnce Halka -->
+  <circle cx="256" cy="256" r="218" fill="none" stroke="#334155" stroke-width="4" stroke-dasharray="10 10" opacity="0.6"/>
+
+  <!-- Havalandırma Pervanesi (4 Bıçaklı Aerodinamik Rotor) -->
+  <g transform="translate(256, 256)" filter="url(#fanShadow)">
+    <!-- 1. Kanat (Kuzey - Altın) -->
+    <g transform="rotate(0)">
+      <path d="M 0,-36 C 38,-58 88,-105 116,-176 C 96,-188 62,-192 32,-180 C 2,-164 -18,-115 -18,-54 Z" fill="url(#bladeGold)"/>
+    </g>
+
+    <!-- 2. Kanat (Doğu - Mavi Hava Akımı) -->
+    <g transform="rotate(90)">
+      <path d="M 0,-36 C 38,-58 88,-105 116,-176 C 96,-188 62,-192 32,-180 C 2,-164 -18,-115 -18,-54 Z" fill="url(#bladeBlue)"/>
+    </g>
+
+    <!-- 3. Kanat (Güney - Altın) -->
+    <g transform="rotate(180)">
+      <path d="M 0,-36 C 38,-58 88,-105 116,-176 C 96,-188 62,-192 32,-180 C 2,-164 -18,-115 -18,-54 Z" fill="url(#bladeGold)"/>
+    </g>
+
+    <!-- 4. Kanat (Batı - Mavi Hava Akımı) -->
+    <g transform="rotate(270)">
+      <path d="M 0,-36 C 38,-58 88,-105 116,-176 C 96,-188 62,-192 32,-180 C 2,-164 -18,-115 -18,-54 Z" fill="url(#bladeBlue)"/>
+    </g>
+
+    <!-- Merkez Rotor Göbeği -->
+    <circle cx="0" cy="0" r="54" fill="url(#hubGrad)" stroke="#0b101b" stroke-width="7"/>
+    <circle cx="0" cy="0" r="22" fill="#0b101b"/>
+    <circle cx="-6" cy="-6" r="6" fill="#ffffff" opacity="0.8"/>
+  </g>
+</svg>
