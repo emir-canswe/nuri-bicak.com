@@ -14,7 +14,7 @@ Diyarbakır Ergani ve tüm bölgeye hizmet veren **Havalandırma Ustası Nuretti
 - `index.html`: Ana sayfa
 - `css/style.css`: Stil dosyası
 - `js/main.js`: Hava akımı simülasyonu ve interaktif fonksiyonlar
-- `*.jpg`: Saha ve usta fotoğrafları
+- `*.webp`: Yüksek hızlı webp formatında saha ve usta fotoğrafları
 
 ## 📞 İletişim
 - **Telefon / WhatsApp**: [+90 534 293 62 87](tel:+905342936287)
