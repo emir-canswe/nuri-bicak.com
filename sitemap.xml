@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://nuri-bicak.com/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://nuri-bicak.com/dcdfd495-aedf-4a4e-8a0e-a73f254fdfdb.jpg</image:loc>
+      <image:title>Havalandırma Ustası Nurettin Bıçak - Diyarbakır ve Ergani Havalandırma Sistemleri</image:title>
+      <image:caption>Nurettin Bıçak şantiye keşif ve havalandırma montajı</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nuri-bicak.com/bad29a2e-ef3e-41e2-a7c5-c353f5a15ecd.jpg</image:loc>
+      <image:title>Havalandırma Ustası Mobil Servis ve Keşif Filosu</image:title>
+      <image:caption>Diyarbakır ve çevre ilçelere hızlı yerinde servis aracı</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nuri-bicak.com/37fae6c2-96d6-4efa-825b-70e6f3691e4b.jpg</image:loc>
+      <image:title>Havalandırma Ustası Nurettin Bıçak</image:title>
+      <image:caption>Nurettin Bıçak kurumsal profil</image:caption>
+    </image:image>
+  </url>
+</urlset>
