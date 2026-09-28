@@ -139,8 +139,16 @@ function initMobileMenu() {
   const navLinks = document.querySelector('.nav-links');
   if (!toggleBtn || !navLinks) return;
 
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+  function toggleMenu(open) {
+    const shouldOpen = open !== undefined ? open : !navLinks.classList.contains('open');
+    if (shouldOpen) {
+      navLinks.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    } else {
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
     const icon = toggleBtn.querySelector('i');
     if (icon) {
       if (navLinks.classList.contains('open')) {
@@ -151,18 +159,32 @@ function initMobileMenu() {
         icon.classList.add('fa-bars');
       }
     }
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
   });
 
   // Menüdeki bağlantıya tıklanınca menüyü kapat
   navLinks.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      const icon = toggleBtn.querySelector('i');
-      if (icon) {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-      }
+      toggleMenu(false);
     });
+  });
+
+  // Dışarı tıklanınca menüyü kapat
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      toggleMenu(false);
+    }
+  });
+
+  // ESC tuşuna basıldığında menüyü kapat
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+      toggleMenu(false);
+    }
   });
 }
 

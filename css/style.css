@@ -1647,13 +1647,13 @@ textarea.form-control {
 
 /* Mobil Cihazlar (768px ve altı) */
 @media (max-width: 768px) {
-  /* Alttaki butonlar için içerik boşluğu */
+  /* Alttaki butonlar için içerik boşluğu (iPhone safe-area uyumlu) */
   body {
-    padding-bottom: 68px;
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
   }
 
   .container {
-    padding: 0 1rem;
+    padding: 0 0.85rem;
   }
 
   .site-header {
@@ -1661,31 +1661,122 @@ textarea.form-control {
   }
 
   .navbar {
-    height: 65px;
+    height: 64px;
+    gap: 0.5rem;
   }
 
-  .logo-title-main,
-  .logo-title-name {
-    font-size: 0.88rem;
-  }
-
-  .logo-sub {
-    font-size: 0.62rem;
+  /* Mobil Logo: İki satırlı, derli toplu ve asla taşmayan yapı */
+  .brand-logo {
+    gap: 10px;
+    min-width: 0;
+    max-width: calc(100% - 50px);
   }
 
   .logo-icon-box {
     width: 38px;
     height: 38px;
-    font-size: 1.1rem;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    flex-shrink: 0;
   }
 
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    line-height: 1.15;
+  }
+
+  .logo-brand-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    white-space: nowrap;
+  }
+
+  .logo-title-main {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  .logo-title-name {
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: var(--gold-light);
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+  }
+
+  .logo-sub {
+    display: none; /* 3. satır mobilde gereksiz kalabalığı önlemek için gizlendi */
+  }
+
+  /* Mobil Hamburger Butonu */
+  .mobile-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-active);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .mobile-toggle-btn:active {
+    background: var(--primary);
+    transform: scale(0.92);
+  }
+
+  /* Mobil Açılır Menü Çekmecesi */
   .nav-links {
-    top: 65px;
-    height: calc(100vh - 65px);
+    top: 64px;
+    height: calc(100dvh - 64px);
+    min-height: calc(100vh - 64px);
+    padding: 2.2rem 1.5rem 6rem 1.5rem;
+    gap: 1.2rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    align-items: center;
+  }
+
+  .nav-links li {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-link:active,
+  .nav-link.active {
+    background: rgba(2, 132, 199, 0.2);
+    border-color: var(--primary-light);
+    color: #fff;
   }
 
   .nav-actions .phone-badge-btn {
-    display: none; /* Mobilde ekran altında sabit arama barı mevcut */
+    display: none; /* Mobilde alt sabit eylem çubuğu mevcut */
   }
 
   /* Hero Düzeni */
